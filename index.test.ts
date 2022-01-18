@@ -27,6 +27,21 @@ describe("test new Object", () => {
     const cartesianPlaneSlopeZero = new CartesianPlane(0 / 2, 5)
     expect(cartesianPlaneZero.isParallel(cartesianPlaneSlopeZero)).toBe(true);
   });
-
-
+  it("should create object void", () => {
+    const cartesianPlaneZero = new CartesianPlane()
+    expect(cartesianPlaneZero).toBeDefined();
+  });
+  it("should create object void and set values and check toString method", () => {
+    const cartesianPlaneZero = new CartesianPlane()
+    cartesianPlaneZero.setSYIntercept(-4);
+    cartesianPlaneZero.setSlope(3)
+    expect(cartesianPlaneZero.toString()).toEqual("3x-4");
+  });
+  it("should create object void, testing set and get methods", () => {
+    const cartesianPlaneZero = new CartesianPlane()
+    cartesianPlaneZero.setSYIntercept(-4);
+    cartesianPlaneZero.setSlope(3)
+    expect(cartesianPlaneZero.getSlope()).toBe(3);
+    expect(cartesianPlaneZero.getYIntercept()).toBe(-4);
+  });
 });
